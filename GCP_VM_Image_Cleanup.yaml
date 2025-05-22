@@ -1,0 +1,131 @@
+name: Automated GCP VM Image Cleanup
+
+on:
+  # 1. Manual Trigger: Allows you to run this workflow from the GitHub Actions UI.
+  #    Provides inputs for flexibility, including a dry_run option.
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Perform a dry run (no actual deletion)?'
+        required: true
+        type: boolean
+        default: true # Default to true for manual runs for safety
+      project_id:
+        description: 'GCP Project ID (override default)'
+        required: false
+        type: string
+      image_name_filter:
+        description: 'Filter for image names (e.g., "golden")'
+        required: false
+        type: string
+        default: 'golden'
+      days_old_threshold:
+        description: 'Images older than this many days will be considered.'
+        required: false
+        type: number
+        default: 180 # Default to 180 days for manual runs
+
+  # 2. Scheduled Trigger: Runs automatically as a cron job.
+  #    This cron expression means "At 00:00 UTC on day 25 of every month."
+  schedule:
+    - cron: '0 0 25 * *'
+
+env:
+  # Default GCP Project ID - IMPORTANT: Replace with your actual project ID
+  GCP_PROJECT_ID: "your-gcp-project-id" 
+  # Default image name filter - images containing this string will be targeted
+  IMAGE_NAME_FILTER: "golden"
+  # Default age threshold in days for scheduled runs - images older than this will be targeted
+  DAYS_OLD_THRESHOLD: 180
+
+permissions:
+  contents: 'read'
+  id-token: 'write' # Required for Workload Identity Federation
+
+jobs:
+  delete-old-images:
+    runs-on: ubuntu-latest
+    # It's good practice to run automated tasks in a specific environment if you use them.
+    # environment: production 
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: 'Set up Google Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+        with:
+          project_id: ${{ github.event.inputs.project_id || env.GCP_PROJECT_ID }}
+
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v2'
+        with:
+          # IMPORTANT: Replace with your Workload Identity Provider details
+          # This is the full resource name of your Workload Identity Provider.
+          # Example: projects/1234567890/locations/global/workloadIdentityPools/my-pool/providers/github-provider
+          workload_identity_provider: 'projects/YOUR_PROJECT_NUMBER/locations/global/workloadIdentityPools/YOUR_POOL_NAME/providers/YOUR_PROVIDER_NAME'
+          # IMPORTANT: Replace with the email of the Service Account that has permissions to delete images
+          # This service account needs `compute.images.list` and `compute.images.delete` permissions.
+          service_account: 'your-github-actions-sa@your-project-id.iam.gserviceaccount.com'
+
+      - name: 'Run Image Deletion Script'
+        id: delete-script
+        run: |
+          # Determine parameters based on how the workflow was triggered
+          PROJECT_ID="${{ github.event.inputs.project_id || env.GCP_PROJECT_ID }}"
+          IMAGE_FILTER="${{ github.event.inputs.image_name_filter || env.IMAGE_NAME_FILTER }}"
+          DAYS_THRESHOLD="${{ github.event.inputs.days_old_threshold || env.DAYS_OLD_THRESHOLD }}"
+          
+          # For scheduled runs, DRY_RUN should be false to perform actual deletion.
+          # For manual runs, use the input provided by the user (defaulting to true).
+          DRY_RUN="true"
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            DRY_RUN="false"
+            echo "Workflow triggered by schedule. Setting DRY_RUN to false for actual deletion."
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            DRY_RUN="${{ github.event.inputs.dry_run }}"
+            echo "Workflow triggered manually. DRY_RUN set to: $DRY_RUN"
+          fi
+
+          echo "--- Configuration ---"
+          echo "GCP Project ID: $PROJECT_ID"
+          echo "Image Name Filter: '$IMAGE_FILTER'"
+          echo "Days Old Threshold: $DAYS_THRESHOLD days"
+          echo "Dry Run Enabled: $DRY_RUN"
+          echo "---------------------"
+
+          # Calculate the cutoff timestamp (seconds since epoch)
+          # Images created before this time will be targeted.
+          CUTOFF_TIMESTAMP_SECONDS=$(date -d "$DAYS_THRESHOLD days ago" +%s)
+          echo "Images created before $(date -d "@$CUTOFF_TIMESTAMP_SECONDS" +"%Y-%m-%d %H:%M:%S %Z") will be considered."
+
+          echo "Listing images matching criteria..."
+          # List images, parse their name and creation timestamp
+          # creationTimestamp is in RFC3339 format (e.g., 2025-05-22T15:00:00.000-05:00)
+          gcloud compute images list --project="$PROJECT_ID" --format="value(name,creationTimestamp)" | while read -r IMAGE_NAME IMAGE_CREATION_TIMESTAMP; do
+            # Convert image creation timestamp to seconds since epoch
+            # Use 'date -d' which is standard on Linux (GitHub Actions runners are Linux).
+            IMAGE_EPOCH_SECONDS=$(date -d "$IMAGE_CREATION_TIMESTAMP" +%s)
+
+            # Check if the image name contains the filter string (case-insensitive)
+            if echo "$IMAGE_NAME" | grep -iq "$IMAGE_FILTER"; then
+              # Check if the image is older than the threshold
+              if (( IMAGE_EPOCH_SECONDS < CUTOFF_TIMESTAMP_SECONDS )); then
+                echo "  Found candidate: $IMAGE_NAME (Created: $IMAGE_CREATION_TIMESTAMP)"
+                if [ "$DRY_RUN" = "true" ]; then
+                  echo "    (Dry run: Would delete '$IMAGE_NAME')"
+                else
+                  echo "    Deleting image: '$IMAGE_NAME'"
+                  # Execute the delete command
+                  gcloud compute images delete "$IMAGE_NAME" --project="$PROJECT_ID" --quiet
+                  if [ $? -eq 0 ]; then
+                    echo "    Successfully sent delete request for '$IMAGE_NAME'."
+                  else
+                    echo "    Failed to delete '$IMAGE_NAME'."
+                  fi
+                fi
+              fi
+            fi
+          done
+
+          echo "Script finished."
