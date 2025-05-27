@@ -1,0 +1,68 @@
+name: Trigger Workflow in Repo B
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'A message to pass to Repo B workflow'
+        required: false
+        default: 'Triggered from Repo A'
+
+jobs:
+  run_initial_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Your initial workflow logic
+        run: |
+          echo "Running initial workflow in Repo A..."
+          # Add your actual workflow steps here, e.g., build, test, etc.
+          echo "Initial workflow completed successfully."
+
+  trigger_repo_b_workflow:
+    runs-on: ubuntu-latest
+    needs: run_initial_workflow # This ensures this job only runs after 'run_initial_workflow' succeeds
+    if: success() # Ensure this job only runs if the previous job succeeded
+    steps:
+      - name: Dispatch workflow in Repo B
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.REPO_B_PAT }} # Your PAT stored as a secret in Repo A
+          repository: your-org/repo-b    # Replace with the owner/repo name of Repo B
+          event-type: my-custom-event    # A custom event type for Repo B to listen for
+          client-payload: |
+            {
+              "repo_a_workflow_id": "${{ github.run_id }}",
+              "repo_a_ref": "${{ github.ref }}",
+              "message": "${{ github.event.inputs.message }}"
+            }
+
+
+# ----------------------------------------------------------------------------------------
+name: Process Triggered Event from Repo A
+
+on:
+  repository_dispatch:
+    types: [my-custom-event] # Must match the event-type from Repo A's workflow
+
+jobs:
+  process_event:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Access client payload
+        run: |
+          echo "Received event from Repo A."
+          echo "Repo A Workflow ID: ${{ github.event.client_payload.repo_a_workflow_id }}"
+          echo "Repo A Ref: ${{ github.event.client_payload.repo_a_ref }}"
+          echo "Message from Repo A: ${{ github.event.client_payload.message }}"
+
+      - name: Your subsequent workflow logic
+        run: |
+          echo "Running subsequent workflow in Repo B..."
+          # Add your actual workflow steps here, e.g., deploy, generate reports, etc.
+          echo "Subsequent workflow completed successfully."
