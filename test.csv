@@ -1,0 +1,417 @@
+CIS_Reference	Order	Control ID	Deprecated	Statement	Criticality Label	Criticality Value	Percentage	Status 	Group 	Action	Current Value(s)	Expected Value(s)	Notes 	Admin Notes
+5.6.1.2.a, 5.6.1.3.a	5.69	1072	0	Status of the 'Minimum Password Age' setting	URGENT	5	0		SecOps/Admin 	Update 	0	File not found OR greater than or equal to 13	Password Policy for Prime is 12, this needs to be set to 12 	*
+5.6.1.1.a	5.67	1073	0	Status of the 'Maximum Password Age' setting (expiration) / Accounts having the 'password never expires' flag set	URGENT	5	0		Group 	Review 	99999	File not found in range 1-365		*
+5.6.4	5.79	1159	0	List of accounts having 'root-level' privileges (UID=0)	URGENT	5	100							*
+3.3.2.l	3.4	1768	0	Status of the 'all.accept_redirects' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.2.k	3.39	1769	0	Status of the 'default.accept_redirects' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.3.f	3.46	1770	0	Status of the 'all_secure_redirects' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.3.e	3.45	1771	0	Status of the 'default.secure_redirects' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.5.c	3.55	1772	0	Status of the 'icmp_echo_ignore_broadcasts' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.1.h	3.24	1774	0	Status of the 'net.ipv4.conf.all.accept_source_route' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.7.f	3.64	1775	0	Status of the current setting for 'net.ipv4.conf.all.rp_filter' network parameter	CRITICAL	4	100							*
+3.3.7.e	3.63	1776	0	Status of the 'net.ipv4.conf.default.rp_filter' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.8.c	3.67	1777	0	Status of the 'tcp_syncookies' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.2.1.c	3.5	1778	0	Status of the 'ipv4.ip_forward' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.2.2.f	3.16	1779	0	Status of the 'net.ipv4.conf.all.send_redirects' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.2.2.e	3.15	1780	0	Status of the 'net.ipv4.conf.default.send_redirects' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+6.1.1.a	6.1	2152	0	Permissions set for the '/etc/passwd' file	URGENT	5	100							*
+6.1.5.a	6.9	2188	0	Permissions set for the '/etc/shadow' file	URGENT	5	100							*
+6.1.3.a	6.5	2189	0	Status of the 'Permissions' settings for the '/etc/group' file	CRITICAL	4	100							*
+6.1.7.a	6.13	2190	0	'Permissions' settings for the '/etc/gshadow' file	CRITICAL	4	100							*
+5.2.16	5.37	2234	0	Status of the 'MaxAuthTries' setting in the 'sshd_config' file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR match all in range 1-4	Other Hardening Standards are using 4	*
+5.2.11	5.34	2236	0	Status of the 'IgnoreRhosts' setting in the '/etc/ssh/sshd_config' file	URGENT	5	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list yes		*
+5.2.7	5.3	2239	0	Status of the 'PermitRootLogin' setting in the 'sshd_config' file	URGENT	5	100							*
+5.2.9	5.32	2240	0	Status of the 'PermitEmptyPasswords' setting in the 'sshd_config' file	URGENT	5	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list no		*
+5.2.15	5.36	2241	0	Status of the 'Banner' setting in the 'sshd_config' file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list ^\s*/etc/issue\.net\b		*
+1.7.6.a	1.64	2263	0	Permissions set for the '/etc/issue.net' file	CRITICAL	4	100							*
+1.7.5.a	1.62	2264	0	Permissions set for the '/etc/issue' file	CRITICAL	4	100							*
+1.7.4.a	1.6	2265	0	Permissions set for the '/etc/motd' file	CRITICAL	4	100							*
+3.3.4.f	3.52	2276	0	Status of the 'net.ipv4.conf.all.log_martians' setting within /etc/sysctl.conf	MEDIUM	2	100							*
+5.2.8	5.31	2278	0	Status of the 'HostBasedAuthentication' setting in '/etc/ssh/sshd_config'	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list no		*
+3.3.1.g	3.23	2321	0	Status of the 'net.ipv4.conf.default.accept_source_route' setting within the /etc/sysctl.conf file	CRITICAL	4	100							*
+6.2.4	6.26	2541	0	Current list of 'User accounts having duplicate UID's'	CRITICAL	4	100							*
+6.2.5	6.27	2542	0	Status of the current list of 'Groups having duplicate GID's'	CRITICAL	4	100							*
+6.2.6	6.28	2543	0	Current list of 'Accounts having duplicate usernames'	CRITICAL	4	100							*
+6.2.7	6.29	2544	0	Current list of 'Accounts having duplicate Group Names'	CRITICAL	4	100							*
+5.6.3.a	5.76	2678	0	Status of the 'TMOUT' setting in the '/etc/bashrc' file (bash shell)	SERIOUS	3	0		Admin 	Update 	Setting not found	File not found OR in range  1-900		*
+5.6.3.b	5.77	2679	0	Status of the 'TMOUT' setting in the '/etc/profile' file (ksh shell)	SERIOUS	3	0		Admin 	Update 	Setting not found	File not found OR in range 1-900		*
+5.6.5.b	5.81	3371	0	Status of the 'UMASK' set for '/etc/profile'	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found  OR  matches regular expression list 077		*
+5.2.5	5.28	3598	0	Status of the 'LogLevel' option in the '/etc/ssh/sshd_config' file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list VERBOSE|INFO		*
+1.7.1	1.57	3868	0	Status of the contents of the login banner in '/etc/motd'	SERIOUS	3	100							*
+6.2.16	6.42	3936	0	Status of the users' group-writable and world-writable dot-files (.) i.e., hidden files	CRITICAL	4	0		Admin 	Update 	"/root/.aaa.html
+/root/.aaa.ini
+/root/.aaa.log
+/root/.aaa.pdf"	File not found  OR does not contain regular expression list .+		*
+6.2.1	6.23	4104	0	Status of 'passwords existing within the /etc/passwd' file	CRITICAL	4	100							*
+1.7.5.b	1.63	4743	0	Ownership set for the '/etc/issue' file	CRITICAL	4	100							*
+1.7.6.b	1.65	4749	0	Ownership set for the '/etc/issue.net' file	CRITICAL	4	100							*
+1.7.3	1.59	4750	0	Status of the 'banner' in the '/etc/issue.net' file	SERIOUS	3	0		Admin 	Update 	\S Kernel \r on an \m	File not found  OR does not contain regular expression list  \\[mrsv]		*
+5.1.9.a	5.17	4772	0	Status of the 'Permissions' settings for the '/etc/at.allow' file	URGENT	5	100							*
+6.1.1.b	6.2	4989	0	Ownership set for the '/etc/passwd' file	URGENT	5	100							*
+6.1.5.b	6.1	4990	0	Ownership set for the '/etc/shadow' file	URGENT	5	100							*
+6.1.3.b	6.6	4991	0	Status of the 'Ownership' settings for the '/etc/group' file	CRITICAL	4	100							*
+5.1.8.b	5.15	5057	0	Permissions set for the '/etc/cron.allow' file	CRITICAL	4	100							*
+5.1.8.c	5.16	5059	0	Ownership set for the '/etc/cron.allow' file	CRITICAL	4	100							*
+6.1.7.b	6.14	5081	0	'Ownership' settings for the '/etc/gshadow' file	CRITICAL	4	100							*
+1.7.4.b	1.61	5088	0	Ownership set for the '/etc/motd' file	CRITICAL	4	100							*
+5.1.9.b	5.18	5140	0	Status of the 'Ownership' settings for the '/etc/at.allow' file	CRITICAL	4	100							*
+5.1.2.a	5.2	5154	0	Status of the 'Permissions' for the '/etc/crontab' file(s)	CRITICAL	4	0		Admin 	Update 	root:root:rw-r--r--.:/etc/crontab	File not found  OR matches regular expression list ^[^:]+:[^:]+:[-r][-w]-------.?:.+		*
+5.1.2.b	5.3	5155	0	Status of the 'Ownership' settings for the '/etc/crontab' file	CRITICAL	4	100							*
+5.2.4.b	5.25	5215	0	Status of the 'AllowGroups' setting in the 'sshd_config' file	CRITICAL	4	100							*
+5.2.4.a	5.24	5217	0	Status of the 'AllowUsers' setting in the 'sshd_config' file	CRITICAL	4	100							*
+5.2.20.a	5.41	5221	0	Status of the 'ClientAliveCountMax' setting in the 'sshd_config' file	MEDIUM	2	0		Admin 	Update 	Setting not found	File not found OR in ra nge 1-3		*
+5.2.20.b	5.42	5222	0	Status of the 'ClientAliveInterval' setting in the 'sshd_config' file	CRITICAL	4	0		Admin 	Update 	420	File not found OR in range 1-300		*
+5.2.4.d	5.27	5224	0	Status of the 'DenyGroups' setting in the 'sshd_config' file	CRITICAL	4	100							*
+5.2.4.c	5.26	5225	0	Status of the 'DenyUsers' setting in the 'sshd_config' file	CRITICAL	4	100							*
+5.2.10	5.33	5279	0	Status of the 'PermitUserEnvironment' setting in the '/etc/ssh/sshd_config' file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list no		*
+5.2.19	5.4	5281	0	Status of the 'LoginGraceTime' setting in the '/etc/ssh/sshd_config' file	SERIOUS	3	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list ^([1-9]|[1-5][0-9]|60)		*
+5.2.17	5.38	5284	0	Status of the 'MaxStartups' setting in the '/etc/ssh/sshd_config' file	MEDIUM	2	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list \b10:30:60\s*$		*
+5.2.18	5.39	5373	0	Status of the 'MaxSessions' setting in the '/etc/ssh/sshd_config' file	MEDIUM	2	0		Admin 	Update 	Setting not found	"File not found OR is contained in list
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10"		*
+5.2.6	5.29	5381	0	Status of the 'UsePAM' setting in the '/etc/ssh/sshd_config' file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list \s*yes\s*$		*
+6.2.3	6.25	5444	0	Current list of groups defined in the file '/etc/passwd' but not in the file '/etc/group'	CRITICAL	4	100							*
+6.2.14	6.4	5452	0	Permissions set for the user .forward files	CRITICAL	4	100							*
+5.1.8.a	5.14	5796	0	Permissions set for the '/etc/cron.deny' file	CRITICAL	4	0		Admin 	Update 	root:root:rw-r--r--.:/etc/cron.deny	File not found  OR does not contain regular expression list .+		*
+3.3.1.d	3.2	5936	0	Status of the current setting for 'net.ipv4.conf.all.accept_source_route' network parameter	CRITICAL	4	100							*
+3.3.2.j	3.38	5956	0	Status of the current setting for 'net.ipv4.conf.all.accept_redirects' network parameter	CRITICAL	4	100							*
+3.3.3.d	3.44	5957	0	Status of the current setting for 'net.ipv4.conf.all.secure_redirects' network parameter	CRITICAL	4	0		Admin 	Update 	1	equal to 0		*
+3.3.7.d	3.62	5958	0	Status of the current setting for 'net.ipv4.conf.default.rp_filter' network parameter	CRITICAL	4	100							*
+3.3.1.c	3.19	5959	0	Status of the current setting for 'net.ipv4.conf.default.accept_source_route' network parameter	CRITICAL	4	100							*
+3.3.2.i	3.37	5960	0	Status of the current setting for 'net.ipv4.conf.default.accept_redirects' network parameter	CRITICAL	4	100							*
+3.3.3.c	3.43	5961	0	Status of the current setting for 'net.ipv4.conf.default.secure_redirects' network parameter	CRITICAL	4	0		Admin 	Update 	1	equal to 0		*
+3.3.5.b	3.54	5962	0	Status of the current setting for 'net.ipv4.icmp_echo_ignore_broadcasts' network parameter	CRITICAL	4	100							*
+3.2.1.b	3.4	5963	0	Status of the current setting for 'net.ipv4.ip_forward' network parameter	CRITICAL	4	100							*
+3.2.2.d	3.14	5964	0	Status of the current setting for 'net.ipv4.conf.default.send_redirects' network parameter	CRITICAL	4	100							*
+3.2.2.c	3.13	5965	0	Status of the current setting for 'net.ipv4.conf.all.send_redirects' parameter	CRITICAL	4	100							*
+3.3.4.e	3.51	5966	0	Status of the 'net.ipv4.conf.all.log_martians' network parameter	CRITICAL	4	100							*
+6.2.8.a	6.3	6058	0	Status of any 'dot (. or :. or .: )' entries within the 'root user's $PATH' variable	CRITICAL	4	100							*
+6.2.8.b	6.31	6059	0	Status of any 'directories with group write permissions' set within the 'root user's $PATH' variable	CRITICAL	4	100							*
+6.2.8.c	6.32	6060	0	Status of any 'directories with 'other' write permissions' set within the 'root user's $PATH' variable	CRITICAL	4	100							*
+6.2.2	6.24	6698	0	Current list of 'Accounts having empty password fields' within '/etc/shadow'	URGENT	5	100							*
+5.3.7	5.5	6796	0	Status of the pam module 'pam_wheel.so' setting in PAM configuration file '/etc/pam.d/su'	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list auth\s+required\s+pam_wheel.so\s+use_uid		*
+3.3.6.c	3.58	6836	0	Status of the 'icmp_ignore_bogus_error_responses' setting	CRITICAL	4	100							*
+3.3.8.b	3.66	7096	0	Status of the current setting for 'net.ipv4.tcp_syncookies' network parameter	MEDIUM	2	100							*
+5.1.7.a	5.12	7339	0	Status of the 'Permissions' settings for the '/etc/cron.d' directory	CRITICAL	4	0		Group 	Review	root:root:rwxr-xr-x.:/etc/cron.d	Directory not found OR  matches regular expression list  [^:]+:[^:]+:[-r][-w][-x]------.?:.+		*
+5.1.7.b	5.13	7340	0	Status of the 'Ownership' settings for the '/etc/cron.d' directory	CRITICAL	4	100							*
+5.1.4.a	5.6	7341	0	Status of the 'Permissions' settings for the '/etc/cron.daily' directory	CRITICAL	4	0		Group 	Review	root:root:rwxr-xr-x.:/etc/cron.daily	Directory not found OR matches regular expression list ^[^:]+:[^:]+:[-r][-w][-x]------.?:.+		*
+5.1.4.b	5.7	7342	0	Status of the 'Ownership' settings for the '/etc/cron.daily' directory	CRITICAL	4	100							*
+5.1.3.a	5.4	7343	0	Status of the 'Permissions' settings for the '/etc/cron.hourly' directory	CRITICAL	4	0		Group 	Review	root:root:rwxr-xr-x.:/etc/cron.hourly	Directory not found OR matches regular expression list ^[^:]+:[^:]+:[-r][-w][-x]------.?:.+		*
+5.1.3.b	5.5	7344	0	Status of the 'Ownership' settings for the '/etc/cron.hourly' directory	CRITICAL	4	100					Directory not found OR matches regular expression list ^[^:]+:[^:]+:[-r][-w][-x]------.?:.+		*
+5.1.5.a	5.8	7345	0	Status of the 'Permissions' settings for the '/etc/cron.weekly' directory	CRITICAL	4	0		Group 	Review	root:root:rwxr-xr-x.:/etc/cron.weekly	Directory not found OR matches regular expression list ^[^:]+:[^:]+:[-r][-w][-x]------.?:.+		*
+5.1.5.b	5.9	7346	0	Status of the 'Ownership' settings for the '/etc/cron.weekly' directory	CRITICAL	4	100							*
+5.1.6.a	5.1	7347	0	Status of the 'Permissions' settings for the '/etc/cron.monthly' directory	CRITICAL	4	0		Group 	Review	root:root:rwxr-xr-x.:/etc/cron.monthly	Directory not found OR matches regular expression list ^[^:]+:[^:]+:[-r][-w][-x]------.?:.+		*
+5.1.6.b	5.11	7348	0	Status of the 'Ownership' settings for the '/etc/cron.monthly' directory	CRITICAL	4	100							*
+5.1.9.c	5.19	7356	0	Status of the 'Permissions' settings for the '/etc/at.deny' file	CRITICAL	4	100							*
+6.1.12	6.2	7408	0	Current list of world writable directories that do not have the sticky bit configured	CRITICAL	4	0		Group 	Review	/tmp/packages/POC	No directory found OR does not contain regular expression list .+		*
+1.3.1	1.31	7411	0	Status of the currently installed 'AIDE' (advanced intrusion detection environment) package on the host	SERIOUS	3	0		Admin 	Update 	Package aide is not installed	matches regular expression list aide-.+		*
+6.2.10	6.36	7417	0	Current list of user accounts with 'existing home directories' defined in /etc/passwd and not present on the host (non-system accounts)	CRITICAL	4	100							*
+6.1.10	6.18	7418	0	Status of the current 'unowned' files and directories on the host	CRITICAL	4	100							*
+6.1.11	6.19	7419	0	Status of the current 'ungrouped' files and directories on the host	CRITICAL	4	100							*
+6.2.9	6.35	7420	0	Status of the 'default Group ID (GID)' setting for the root account	URGENT	5	100							*
+1.6.1.7	1.55	7427	0	Status of the currently installed 'setroubleshoot' packages on the host	CRITICAL	4	100							*
+1.6.1.4.b, 1.6.1.5.b	1.53	7431	0	Status of the 'SELINUX' setting in the '/etc/selinux/config' file	CRITICAL	4	100							*
+1.6.1.3.a	1.5	7432	0	Status of the 'SELINUXTYPE' setting in the '/etc/selinux/config' file	CRITICAL	4	100							*
+1.5.3.d	1.47	7436	0	Status of the network parameter 'kernel.randomize_va_space'	CRITICAL	4	100							*
+4.2.1.1	4.1	7440	0	Status of the currently installed 'rsyslog' package on the host	CRITICAL	4	100							*
+3.3.4.d	3.5	7464	0	Status of the network parameter 'net.ipv4.conf.default.log_martians'	CRITICAL	4	100							*
+3.3.9.f	3.73	7478	0	Status of the current setting for 'net.ipv6.conf.all.accept_ra' network parameter	MEDIUM	2	0		Admin 	Update 	1	equal to 0		*
+3.3.9.e	3.72	7500	0	Status of the 'net.ipv6.conf.default.accept_ra' network parameter on the host	MEDIUM	2	0		Admin 	Update 	1	equal to 0		*
+3.3.2.h	3.36	7505	0	Status of the 'net.ipv6.conf.all.accept_redirects' network parameter on the host	MEDIUM	2	0		Admin 	Update 	1	equal to 0		*
+3.3.2.g	3.35	7506	0	Status of the 'net.ipv6.conf.default.accept_redirects' network parameter on the host	MEDIUM	2	0		Admin 	Update 	1	equal to 0		*
+2.3.1	2.26	7948	0	Status of the 'telnet-client' package on the host	CRITICAL	4	100							*
+2.2.7	2.1	7960	0	Status of the 'tftp-server' package and whether it is installed on the host	CRITICAL	4	100							*
+2.2.13	2.18	8029	0	Status of the 'telnet-server' package on the host	SERIOUS	3	100							*
+6.2.15	6.41	8071	0	Status of the presence of 'User .rhosts' files on the host	CRITICAL	4	100							*
+5.3.6.a	5.48	8889	0	Status of the 'sudo' timeout period	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR  matches regular expression list Defaults\s+timestamp_timeout=([0-9]|[1-9][0-9]|[1-8][0-9][0-9]|900)$		*
+5.2.1.a	5.2	9190	0	Permissions set for the /etc/ssh/sshd_config file	CRITICAL	4	100							*
+5.2.1.b	5.21	9191	0	Ownership set for the /etc/ssh/sshd_config file	CRITICAL	4	100							*
+4.2.1.2	4.2	9335	0	Status of the rsyslog service	CRITICAL	4	100							*
+5.1.1	5.1	9337	0	Status of the crond service	CRITICAL	4	100							*
+1.4.2.a	1.36	9339	0	Ownership set on the /boot/grub2/grub.cfg	CRITICAL	4	100							*
+1.4.2.b	1.37	9340	0	Permissions set on the file /boot/grub2/grub.cfg	CRITICAL	4	100							*
+2.2.5	2.8	9342	0	Status of the DNS server	MEDIUM	2	100							*
+2.2.8.a	2.11	9343	0	Status of the HTTP server	SERIOUS	3	100							*
+2.2.9.a	2.13	9345	0	Status of the 'Dovecot' (IMAP and POP3) server	SERIOUS	3	100							*
+2.2.10	2.15	9346	0	Status of the 'Samba' package	SERIOUS	3	100							*
+2.2.11	2.16	9347	0	Status of the HTTP Proxy Server(Squid)	CRITICAL	4	100							*
+2.2.12	2.17	9348	0	Status of the Simple Network Management Protocol (SNMP)	CRITICAL	4	100							*
+2.3.2	2.27	9354	0	Status of the LDAP daemon (openldap-clients)	MEDIUM	2	100							*
+2.3.3	2.28	9374	0	Status of the 'Trivial File Transfer Protocol (TFTP)' protocol	CRITICAL	4	100							*
+1.6.1.8	1.56	9376	0	Status of the MCS Translation Service (mcstrans)	SERIOUS	3	100							*
+2.2.15	2.2	9380	0	Status of the Mail Transfer Agent for Local-Only Mode	CRITICAL	4	100							*
+5.6.2	5.75	9391	0	Status of the System Accounts	CRITICAL	4	100							*
+4.2.1.7.b	4.11	9725	0	Accept Remote rsyslog Messages Only on Designated Log Hosts - ModLoad	MEDIUM	2	100							*
+3.2.1.g	3.9	9834	0	Status of the the 'net.ipv6.conf.all.forwarding' network parameter setting on the host	MEDIUM	2	100							*
+2.2.17.b, 2.2.18.b	2.24	9974	0	Status of the 'rpcbind' service	SERIOUS	3	100							*
+3.3.6.b	3.57	10158	0	Status of the 'net.ipv4.icmp_ignore_bogus_error_responses' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.4.c	3.49	10487	0	Status of the network parameter 'net.ipv4.conf.default.log_martians' within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+3.3.9.d	3.71	10488	0	Status of the 'net.ipv6.conf.all.accept_ra' setting within the '/etc/sysctl.conf' file	MEDIUM	2	100							*
+3.3.9.c	3.7	10489	0	Status of the 'net.ipv6.conf.default.accept_ra' setting within the '/etc/sysctl.conf' file	MEDIUM	2	100							*
+3.3.2.f	3.34	10490	0	Status of the 'net.ipv6.conf.all.accept_redirects' setting within the '/etc/sysctl.conf' file	MEDIUM	2	100							*
+3.3.2.e	3.33	10491	0	Status of the 'net.ipv6.conf.default.accept_redirects' setting within the '/etc/sysctl.conf' file	MEDIUM	2	100							*
+5.6.1.2.b	5.7	10503	0	Status of the 'Minimum Password Age' configured for each user on the system	CRITICAL	4	100							*
+6.1.9	6.17	10505	0	Status of the 'world-writable' files on the host	CRITICAL	4	100							*
+6.2.8.d	6.33	10506	0	Status of the non-directory files set within the global PATH variable	SERIOUS	3	0		Admin 	Update 	"/root/.local/bin
+/root/bin"	No non-directory entry exist in global PATH variable.  OR  does not contain regular expression list .+		*
+1.5.3.c	1.46	10507	0	Status of the network parameter 'kernel.randomize_va_space' setting within the '/etc/sysctl.conf' file	CRITICAL	4	0		Group 	Review	OPTIONS="-F 2"	File not found OR matches regular expression list OPTIONS="-F 6"		*
+1.6.1.1	1.48	10662	0	Status of the 'SELinux' package on the host	SERIOUS	3	100							*
+2.1.2.a	2.2	10663	0	Status of the 'server' setting in 'chrony.conf' file	CRITICAL	4	100							*
+2.1.2.c	2.4	10664	0	Status of the 'OPTIONS' setting within '/etc/sysconfig/chronyd' file	CRITICAL	4	0		Group 	Review	OPTIONS="-F 2"	File not found OR matches regular expression list OPTIONS="-F 6"		*
+4.2.1.4.a	4.4	10666	0	Status of the '$FileCreateMode' setting within '/etc/rsyslog.conf' file	CRITICAL	4	0		Group 	Review	FileCreateMode="0644" # Set the access permissions for the state file	File not found OR matches regular expression list 0[0246][04]0		*
+4.2.3	4.3	10673	0	Status of the 'permission' set for all logfiles in '/var/log' directory	CRITICAL	4	0		Group 	Review	"root:root:rw-------:/var/log/tallylog
+root:utmp:rw-rw-r--:/var/log/wtmp
+root:utmp:rw-rw----:/var/log/btmp
+root:utmp:rw-rw-r--:/var/log/lastlog
+root:root:rw-------:/var/log/audit/audit.log
+root:root:rw-r--r--:/var/log/dnf.librepo.log
+root:root:rw-r--r--:/var/log/dnf.rpm.log
+root:root:rw-r-----:/var/log/firewalld
+root:root:rw-------:/var/log/qualys/qualys-cloud-agent.log
+root:root:rw-------:/var/log/qualys/qualys-cloud-agent-scan.log
+root:root:rw-------:/var/log/qualys/agentid.log
+root:root:rw-------:/var/log/qualys/qualys-cep.log
+root:root:rw-------:/var/log/qualys/qualys-health-check.log
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-20T18:15:06Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-20T19:38:27Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-20T19:38:27Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-20T23:39:49Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-20T23:39:49Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T03:41:12Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T03:41:12Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T07:42:36Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T07:42:36Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T11:43:57Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T11:43:57Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T15:45:19Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T15:45:19Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T18:38:42Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T18:38:42Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T22:40:04Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-21T22:40:04Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-22T02:41:27Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-22T02:41:27Z.txt
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-22T06:42:42Z.json
+root:root:rw-------:/var/log/qualys/localhealthcheck/QualysHealthCheckResult_2025-05-22T06:42:42Z.txt
+root:root:rw-r--r--:/var/log/hawkey.log-20250518
+root:root:rw-r--r--:/var/log/hawkey.log
+root:root:rw-------:/var/log/cron-20250518
+root:root:rw-------:/var/log/cron
+root:root:rw-------:/var/log/maillog-20250518
+root:root:rw-------:/var/log/maillog
+root:root:rw-------:/var/log/messages-20250518
+root:root:rw-------:/var/log/messages
+root:root:rw-------:/var/log/secure-20250518
+root:root:rw-------:/var/log/secure
+root:root:rw-------:/var/log/spooler-20250518
+root:root:rw-------:/var/log/spooler
+root:root:rw-r--r--:/var/log/dnf.log.4
+root:root:rw-r--r--:/var/log/dnf.log.3
+root:root:rw-r--r--:/var/log/dnf.log.2
+root:root:rw-r--r--:/var/log/dnf.log.1
+root:root:rw-r--r--:/var/log/dnf.log"	"File not found
+------------ OR ------------
+contains regular expression list
+^root:(utmp|root):[-r][-w]-[-r][-w]-[-r]--.?:/var/log/lastlog.*
+^root:(utmp|root):[-r][-w]-[-r][-w]-[-r]--.?:/var/log/wtmp.*
+^root:(utmp|root):[-r][-w]-[-r][-w]-[-r]--.?:/var/log/wtmp-.*
+^root:(utmp|root):[-r][-w]-[-r][-w]-[-r]--.?:/var/log/btmp.*
+^root:(utmp|root):[-r][-w]-[-r][-w]-[-r]--.?:/var/log/btmp-.*
+^(syslog|root):(adm|root):[-r][-w]-[-r]-----.?:/var/log/secure
+^(syslog|root):(adm|root):[-r][-w]-[-r]-----.?:/var/log/auth.log
+^(syslog|root):(adm|root):[-r][-w]-[-r]-----.?:/var/log/syslog
+^(syslog|root):(adm|root):[-r][-w]-[-r]-----.?:/var/log/messages
+^(SSSD|root):(SSSD|root):[-r][-w]-[-r][-w]----.?:/var/log/SSSD
+^(SSSD|root):(SSSD|root):[-r][-w]-[-r][-w]----.?:/var/log/sssd
+^root:(gdm3?|root):[-r][-w]-[-r][-w]----.?:/var/log/gdm
+^root:(gdm3?|root):[-r][-w]-[-r][-w]----.?:/var/log/gdm3
+^root:(systemd-journal|root):[-r][-w]-[-r]-----.?:/var/log/.*\.journal
+^root:(systemd-journal|root):[-r][-w]-[-r]-----.?:/var/log/.*\.journal~"		*
+1.7.2	1.58	10684	0	Status of the contents of the login banner in '/etc/issue'	SERIOUS	3	0		Admin 	Update 	\S Kernel \r on an \m	File not found OR does not contain regular expression list \\[mrsv]		*
+6.1.2.a	6.3	10690	0	Status of the Permissions set for the '/etc/passwd-' file	CRITICAL	4	100							*
+6.1.2.b	6.4	10691	0	Status of the Ownership set for the '/etc/passwd-' file	CRITICAL	4	100							*
+6.1.6.a	6.11	10692	0	Status of the Permissions set for the '/etc/shadow-' file	CRITICAL	4	100							*
+6.1.6.b	6.12	10693	0	Status of the Ownership set for the '/etc/shadow-' file	CRITICAL	4	100							*
+6.1.4.a	6.7	10694	0	Status of the Permissions set for the '/etc/group-' file	CRITICAL	4	100							*
+6.1.4.b	6.8	10695	0	Status of the Ownership set for the '/etc/group-' file	CRITICAL	4	100							*
+6.1.8.a	6.15	10696	0	Status of the Permissions set for the '/etc/gshadow-' file	CRITICAL	4	100							*
+6.1.8.b	6.16	10697	0	Status of the Ownership set for the '/etc/gshadow-' file	CRITICAL	4	100							*
+5.6.1.1.b	5.68	10732	0	Status of the 'Maximum Password Age' setting (expiration) for 'users with a password' setting	CRITICAL	4	100							*
+5.6.1.3.b	5.71	10733	0	Status of the 'Minimum Password Age' for 'users with a password' setting	CRITICAL	4	100							*
+5.6.1.4.b	5.73	10735	0	Status of the 'Maximum number of days of inactivity allowed before a user account is locked out' for 'users with a password' setting	CRITICAL	4	100							*
+3.3.7.c	3.61	10736	0	Status of the 'net.ipv4.conf.all.rp_filter ' setting within the '/etc/sysctl.conf' file	CRITICAL	4	100							*
+6.2.11.a, 6.2.12.a	6.37	10823	0	Status of the home directory ownership and permissions for the system accounts defined within the /etc/passwd file	CRITICAL	4	100							*
+6.2.11.b, 6.2.12.b	6.38	10824	0	Status of the home directory ownership and permissions for the user accounts (non-system users) defined within the /etc/passwd file	CRITICAL	4	100							*
+1.3.2.a	1.32	10859	0	Status of the 'periodically scheduled (crontab)' aide check (/etc/cron.* and /etc/crontab)	CRITICAL	4	100							*
+1.1.2.1.b	1.3	10860	0	Status of the /tmp partition using systemctl utility ( Tmp.mount service status)	CRITICAL	4	0		Group 	Review	disabled	matches regular expression list generated|static		*
+5.5.4.b	5.65	11168	0	Status of the ENCRYPT_METHOD setting within /etc/login.defs	CRITICAL	4	100							*
+1.8.1, 1.8.6.a	1.66	11327	0	Status of the 'GDM' package	MEDIUM	2	100							*
+2.1.1	2.1	11328	0	Status of the 'chrony' package	MEDIUM	2	100							*
+5.6.5.a	5.8	11401	0	Default user umask settings in the /etc/login.defs file	CRITICAL	4	0		Admin 	Update 	UMASK 022	File not found  OR matches regular expression list 077		*
+5.3.4.a, 5.3.5.a	5.46	11415	0	Status of the NOPASSWD and !authenticate options in the file '/etc/sudoers'	URGENT	5	0		Group 	Review	/etc/sudoers.d/google_sudoers:	google-sudoers ALL=(ALL:ALL) NOPASSWD:ALL		*
+5.5.4.a	5.64	11526	0	Status of the 'crypt_style' setting in the '/etc/libuser.conf' file	SERIOUS	3	100							*
+1.8.2.a	1.7	11628	0	Status of 'banner-message-enable' setting in /etc/dconf/db/.*.d/* file	MEDIUM	2	100							*
+1.8.2.b	1.71	11629	0	Status of 'banner-message-text' setting in /etc/dconf/db/.*.d/* file	MEDIUM	2	100							*
+1.8.4, 1.8.5.a	1.67	11635	0	Status of 'idle-delay' time setting in /etc/dconf/db/.*.d/* file	SERIOUS	3	100							*
+1.8.5.b	1.73	11638	0	Status of 'lock-delay' time setting in /etc/dconf/db/.*.d/*	MEDIUM	2	100							*
+5.2.3	5.23	11704	0	Status of permissions on all SSH public key files	MEDIUM	2	100							*
+5.2.2	5.22	11705	0	Status of permissions on all SSH private key files	MEDIUM	2	0		Group 	Review	"root:root:rw-------:/etc/ssh/ssh_host_ecdsa_key
+root:root:rw-------:/etc/ssh/ssh_host_ed25519_key
+root:root:rw-------:/etc/ssh/ssh_host_rsa_key"	File not found OR matches regular expression list ^root:ssh_keys:[-r][-w]-[-r]-----.?:.+		*
+3.4.1.2.a	3.75	11710	0	Status of 'firewalld' package	MEDIUM	2	100							*
+3.4.2.1	3.81	11726	0	Status of the default firewall zone	MEDIUM	2	100							*
+3.3.1.b	3.18	11727	0	Status of the network parameter net.ipv6.conf.all.accept_source_route	MEDIUM	2	100							*
+3.3.1.f	3.22	11728	0	Status of the net.ipv6.conf.all.accept_source_route setting in sysctl.conf	MEDIUM	2	100							*
+3.4.1.2.b	3.76	12242	0	Status of Load,Active and Sub unit of firewalld service	CRITICAL	4	0		Group 	Review	loaded:active:running	Service Not Found OR does not contain regular expression list :active:		*
+3.2.1.f	3.8	12680	0	Status of the 'net.ipv6.conf.all.forwarding' setting in /etc/sysctl.conf configuration file	SERIOUS	3	100							*
+1.4.2.f	1.41	12751	0	Status of ownership set for the /boot/grub2/user.cfg	CRITICAL	4	100							*
+1.4.2.e	1.4	12752	0	Status of permission set for the /boot/grub2/user.cfg	CRITICAL	4	100							*
+1.4.1	1.35	12753	0	Status of password set for bootloader in /boot/grub2/user.cfg	CRITICAL	4	100							*
+2.2.16.b	2.22	12757	0	Status of the 'nfs-server' systemd service	SERIOUS	3	100							*
+1.5.3.b	1.45	12786	0	Status of the 'kernel.randomize_va_space' parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.2.1.a	3.3	12787	0	Status of the 'net.ipv4.ip_forward' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.2.2.b	3.12	12788	0	Status of the 'net.ipv4.conf.all.send_redirects' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.2.2.a	3.11	12789	0	Status of the 'net.ipv4.conf.default.send_redirects' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.1.l	3.28	12790	0	Status of the 'net.ipv4.conf.all.accept_source_route' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.1.k	3.27	12791	0	Status of the 'net.ipv4.conf.default.accept_source_route' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.2.d	3.32	12792	0	Status of the 'net.ipv4.conf.all.accept_redirects' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.2.c	3.31	12793	0	Status of the 'net.ipv4.conf.default.accept_redirects' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.3.b	3.42	12794	0	Status of the 'net.ipv4.conf.all.secure_redirects' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	0		Group 	Review	/etc/sysctl.d/60-gce-network-security.conf:net.ipv4.conf.all.secure_redirects=1	Setting not found OR matches regular expression list ^[^:]+:\s*net.ipv4.conf.all.secure_redirects\s*=\s*0\s*$		*
+3.3.3.a	3.41	12795	0	Status of the 'net.ipv4.conf.default.secure_redirects' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	0		Group 	Review	/etc/sysctl.d/60-gce-network-security.conf:net.ipv4.conf.default.secure_redirects=1	Setting not found  OR matches regular expression list ^[^:]+:\s*net.ipv4.conf.default.secure_redirects\s*=\s*0\s*$		*
+3.3.4.b	3.48	12796	0	Status of the 'net.ipv4.conf.all.log_martians' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.4.a	3.47	12797	0	Status of the 'net.ipv4.conf.default.log_martians' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.5.a	3.53	12798	0	Status of the 'net.ipv4.icmp_echo_ignore_broadcasts' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.6.a	3.56	12799	0	Status of the 'net.ipv4.icmp_ignore_bogus_error_responses' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.7.b	3.6	12800	0	Status of the 'net.ipv4.conf.all.rp_filter' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.7.a	3.59	12801	0	Status of the 'net.ipv4.conf.default.rp_filter' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	0		Group 	Review	"/etc/sysctl.d/60-gce-network-security.conf:net.ipv4.conf.default.rp_filter=1
+/usr/lib/sysctl.d/50-default.conf:net.ipv4.conf.default.rp_filter = 2
+/usr/lib/sysctl.d/50-redhat.conf:net.ipv4.conf.default.rp_filter = 1"	Setting not found OR matches regular expression list ^[^:]+:\s*net.ipv4.conf.default.rp_filter\s*=\s*1\s*$		*
+3.3.8.a	3.65	12802	0	Status of the 'net.ipv4.tcp_syncookies' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.9.b	3.69	12803	0	Status of the 'net.ipv6.conf.all.accept_ra' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	SERIOUS	3	100							*
+3.3.9.a	3.68	12804	0	Status of the 'net.ipv6.conf.default.accept_ra' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	SERIOUS	3	100							*
+3.3.2.b	3.3	12805	0	Status of the 'net.ipv6.conf.all.accept_redirects' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	SERIOUS	3	100							*
+3.3.2.a	3.29	12806	0	Status of the 'net.ipv6.conf.default.accept_redirects' network parameter configured under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	SERIOUS	3	100							*
+5.6.1.5	5.74	12807	0	Status of the 'Last password change' setting for user	CRITICAL	4	100							*
+1.6.1.3.b	1.51	12880	0	Status of 'Loaded policy name' setting through 'sestatus' (running configuration)	CRITICAL	4	100							*
+5.6.5.c	5.82	12884	0	Status of 'umask' setting in /etc/profile and /etc/profile.d/*.sh files	CRITICAL	4	100							*
+2.1.2.b	2.3	13138	0	Status of the 'pool' setting in 'chrony.conf'	SERIOUS	3	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list ^(?!\s*$).+		*
+5.5.3.a	5.62	13241	0	Status of the remember setting for pam_unix.so or pam_pwhistory.so module in /etc/pam.d/password-auth file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR match all greater than or equal to 5		*
+5.5.3.b	5.63	13242	0	Status of the remember setting for pam_unix.so or pam_pwhistory.so module in /etc/pam.d/system-auth file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR match all greater than or equal to 5		*
+1.1.2.1.a	1.2	13243	0	Status of '/tmp' partition using mount command	CRITICAL	4	0		Admin 	Update 	Setting not found	Command Not Found  OR matches regular expression list \s+/tmp\s+		*
+5.6.3.c	5.78	13376	0	Status of TMOUT within /etc/profile.d/ directory	SERIOUS	3	100							*
+3.2.1.e	3.7	14393	0	Status of the 'net.ipv6.conf.all.forwarding' network parameter configured in any configuration file under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	SERIOUS	3	100							*
+3.3.1.j	3.26	14394	0	Status of the 'net.ipv6.conf.all.accept_source_route' network parameter configured in any configuration file under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/' directories	CRITICAL	4	100							*
+3.3.1.a	3.17	14395	0	Status of the 'net.ipv6.conf.default.accept_source_route' runtime network parameter	CRITICAL	4	100							*
+3.3.1.e	3.21	14396	0	Status of the 'net.ipv6.conf.default.accept_source_route' parameter in the /etc/sysctl.conf file	CRITICAL	4	100							*
+3.3.1.i	3.25	14397	0	Status of the 'net.ipv6.conf.default.accept_source_route' network parameter configured in any configuration file under '/etc/sysctl.d/', '/run/sysctl.d/' or '/usr/lib/sysctl.d/'	CRITICAL	4	100							*
+1.1.8.2	1.21	14598	0	Status of the 'nodev' option for '/dev/shm' partition using 'mount' command	CRITICAL	4	100							*
+1.1.2.2	1.4	14599	0	Status of the 'nodev' option for '/tmp' partition using 'mount' command	CRITICAL	4	100							*
+1.1.4.4	1.11	14600	0	Status of the 'nodev' option for '/var/tmp' partition using 'mount' command	CRITICAL	4	100							*
+1.1.7.2	1.18	14601	0	Status of the 'nodev' option for '/home' partition using 'mount' command	CRITICAL	4	100							*
+1.1.2.4	1.6	14602	0	Status of the 'nosuid' option for '/tmp' partition using 'mount' command	SERIOUS	3	100							*
+1.1.2.3	1.5	14603	0	Status of the 'noexec' option for '/tmp' partition using 'mount' command	CRITICAL	4	100							*
+1.1.4.3	1.1	14604	0	Status of the 'nosuid' option for '/var/tmp' partition using 'mount' command	SERIOUS	3	100							*
+1.1.4.2	1.9	14605	0	Status of the 'noexec' option for '/var/tmp' partition using 'mount' command	CRITICAL	4	100							*
+1.1.7.3	1.19	14606	0	Status of the 'nosuid' option for '/home' partition using 'mount' command	SERIOUS	3	100							*
+1.1.8.4	1.23	14608	0	Status of the 'nosuid' option for '/dev/shm' partition using 'mount' command	SERIOUS	3	100							*
+1.1.8.3	1.22	14609	0	Status of the 'noexec' option for '/dev/shm' partition using 'mount' command	CRITICAL	4	0		Group 	Review	tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel,inode64)	Command Not Found OR Setting not found OR matches regular expression list \s+/dev/shm\s+.*noexec		*
+5.4.2.a	5.52	14796	0	Status of the 'pam_faillock.so' module in /etc/pam.d/password-auth file	MEDIUM	2	0		Admin 	Update 	Setting not found	"contains regular expression list
+^auth\s*required\s*pam_faillock.so
+unlock_time=(9[0-9][0-9]|[1-9][0-9][0-9][0-9]+)
+deny=5"		*
+5.4.2.b	5.53	14797	0	Status of the 'pam_faillock.so' module in /etc/pam.d/system-auth file	MEDIUM	2	0		Admin 	Update 	Setting not found	"File not found OR contains regular expression list
+^auth\s*required\s*pam_faillock.so
+unlock_time=(9[0-9][0-9]|[1-9][0-9][0-9][0-9]+)
+deny=5"		*
+2.2.6	2.9	16055	0	Status of 'vsftpd' package	MEDIUM	2	100							*
+5.5.1.c	5.56	16108	0	Status of 'minlen' parameter set in /etc/security/pwquality.conf file	SERIOUS	3	0		Admin 	Update 	Setting not found	File not found  OR greater than or equal to 14		*
+5.6.6	5.84	16681	0	Status of user and their password in username:password status format	SERIOUS	3	0		Admin 	Update 	Setting not found	File not found OR  matches regular expression list Defaults\s+use_pty		*
+5.3.1	5.43	17125	0	Status of the 'sudo' package installation on the host	CRITICAL	4	100							*
+5.3.2	5.44	17126	0	Status of the 'use_pty' setting in /etc/sudoers and /etc/sudoers.d/ file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR  matches regular expression list Defaults\s+use_pty		*
+1.4.2.d	1.39	17127	0	Status of the Permissions of '/boot/grub2/grubenv' file	CRITICAL	4	100							*
+4.2.2.3	4.2	17132	0	Status of the 'Compress' attribute in /etc/systemd/journald.conf file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list yes		*
+4.2.2.4	4.21	17133	0	Status of the 'Storage' attribute in '/etc/systemd/journald.conf' file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list yes		*
+5.2.14	5.35	17134	0	Status of the 'CRYPTO_POLICY' setting in the '/etc/sysconfig/sshd' file	CRITICAL	4	100							*
+6.2.8.e	6.34	17139	0	Status of the PATH directories not owned by root	CRITICAL	4	100							*
+1.1	1.1	17141	0	Status of the 'LEGACY' crypto policy from '/etc/crypto-policies/config' file	CRITICAL	4	100							*
+1.4.2.c	1.38	17144	0	Status of the Ownership of '/boot/grub2/grubenv' file	CRITICAL	4	100							*
+5.3.3	5.45	17145	0	Status of the sudo log file on the host	SERIOUS	3	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list yes		*
+3.4.2.2	3.82	17152	0	Status of the 'tables' exists on the host (nftables)	CRITICAL	4	100							*
+3.4.2.3, 3.4.2.7	3.8	17153	0	Status of input, output and forward base chains present on the host	CRITICAL	4	100							*
+3.4.2.4	3.83	17154	0	Status of the IPv4 nftables ruleset on loopback interface	CRITICAL	4	0		Group 	Review	iifname "lo" accept	Setting not found  OR contains regular expression list ip\s*saddr\s*127\.0\.0\.0/8\s*counter\s*.*drop iif\s*"lo"\s*.*accept		*
+1.6.1.6	1.54	17165	0	Status of the unconfined services on the host	SERIOUS	3	0		Admin 	Update 	"system_u:system_r:unconfined_service_t:s0 1192 ? 00:01:09 google_guest_ag
+system_u:system_r:unconfined_service_t:s0 1195 ? 00:02:13 google_osconfig
+system_u:system_r:unconfined_service_t:s0 1956 ? 02:46:39 google_guest_ag
+system_u:system_r:unconfined_service_t:s0 3715 ? 00:06:18 s1-orchestrator
+system_u:system_r:unconfined_service_t:s0 3716 ? 00:02:34 s1-network
+system_u:system_r:unconfined_service_t:s0 3717 ? 00:01:39 s1-scanner
+system_u:system_r:unconfined_service_t:s0 3718 ? 00:31:21 s1-agent
+system_u:system_r:unconfined_service_t:s0 3719 ? 00:00:55 s1-firewall"	Setting not found OR does not contain regular expression list .+		*
+1.5.1	1.42	17222	0	Status of the 'Storage' setting in '/etc/systemd/coredump.conf' file	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR matches regular expression list none		*
+1.5.2	1.43	17223	0	Status of the 'ProcessSizeMax' setting in '/etc/systemd/coredump.conf' file	CRITICAL	4	0		Group 	Review	1G	File not found OR matches regular expression list ^0$		*
+1.1.9.c	1.26	17275	0	Status of 'usb-storage' kernel module in modprobe	SERIOUS	3	0		Group 	Review	insmod /lib/modules/5.14.0-503.35.1.el9_5.x86_64/kernel/drivers/usb/storage/usb-storage.ko.xz 	matches regular expression list install\s+/bin/true		*
+1.1.9.b	1.25	17276	0	Status of 'usb-storage' kernel module using lsmod	SERIOUS	3	100							*
+5.5.1.d	5.57	17292	0	Status of the 'minclass' setting in '/etc/security/pwquality.conf'	CRITICAL	4	0		Admin 	Update 	Setting not found	File not found OR equal to 4		*
+3.4.1.1, 3.4.1.2.d	3.74	17296	0	Status of 'nftables' package on the system	SERIOUS	3	100							*
+1.1.9.a	1.24	17565	0	Status of 'blacklist' setting for 'usb-storage' kernel module specified in '/etc/modprobe.d/*.conf' files	SERIOUS	3	100							*
+1.6.1.4.a, 1.6.1.5.a	1.52	17566	0	Status of SELinux, using getenforce utility	CRITICAL	4	100							*
+5.5.1.h	5.61	17690	0	Status of the 'ucredit' parameter within '/etc/security/pwquality.conf' and '/etc/security/pwquality.conf.d/*.conf' file(s)	CRITICAL	4	0		Admin 	Update 	Setting not found	matches regular expression list -1		*
+5.5.1.g	5.6	17691	0	Status of the 'lcredit' parameter within '/etc/security/pwquality.conf' and '/etc/security/pwquality.conf.d/*.conf' file(s)	CRITICAL	4	0		Admin 	Update 	Setting not found	matches regular expression list -1		*
+5.5.1.f	5.59	17692	0	Status of the 'dcredit' parameter within '/etc/security/pwquality.conf' and '/etc/security/pwquality.conf.d/*.conf' file(s)	CRITICAL	4	0		Admin 	Update 	Setting not found	matches regular expression list -1		*
+5.5.1.e	5.58	17693	0	Status of the 'ocredit' parameter within '/etc/security/pwquality.conf' and '/etc/security/pwquality.conf.d/*.conf' file(s)	CRITICAL	4	0		Admin 	Update 	Setting not found	matches regular expression list -1		*
+5.3.4.b, 5.3.5.b	5.47	18164	0	Status of NOPASSWD|!authenticate" kernel module setting from all files inside sudoers.d dir"	URGENT	5	0		Admin 	Update 	%google-sudoers ALL=(ALL:ALL) NOPASSWD:ALL	Setting not found  OR File not found OR does not contain regular expression list .+		*
+1.8.6.c, 1.8.7.b	1.75	19111	0	Status of 'automount' setting in '/etc/dconf/db/*.d/*' files	SERIOUS	3	100							*
+1.8.6.b, 1.8.7.a	1.74	19112	0	Status of 'automount-open' setting in '/etc/dconf/db/*.d/*' files	SERIOUS	3	100							*
+1.8.8, 1.8.9	1.68	19113	0	Status of 'autorun-never' setting in '/etc/dconf/db/*.d/*' files	SERIOUS	3	100							*
+1.1.8.1	1.2	19399	0	Status of Mount Partition '/dev/shm' using mount command	CRITICAL	4	100							*
+4.2.1.4.b	4.5	19583	0	Status of 'FileCreateMode' defined within /etc/rsyslog.d/ files	SERIOUS	3	100							*
+4.2.1.7.a	4.1	19584	0	Status of 'ModLoad' defined within /etc/rsyslog.d/ files	CRITICAL	4	100							*
+3.4.1.2.e	3.78	20626	0	Status of the 'nftables' service using systemctl	CRITICAL	4	100							*
+1.8.10	1.69	21425	0	Status of the 'Enable' setting in '/etc/gdm/custom.conf'	SERIOUS	3	100							*
+5.5.4.c	5.66	21452	0	Status of the pam_unix module in /etc/pam.d/password-auth	CRITICAL	4	100							*
+1.2.2.a	1.28	21475	0	Status of the 'gpgcheck' setting within the /etc/yum.repos.d/*.repo files	SERIOUS	3	100							*
+6.2.13	6.39	21554	0	Status of the permissions set for '.netrc' file(s) under each user home directory.	SERIOUS	3	100							*
+5.3.6.b	5.49	22115	0	Status of 'timestamp_timeout' setting in '/etc/sudoers.d/*' files	SERIOUS	3	100							*
+1.2.2.b	1.29	22640	0	Status of the 'gpgcheck' setting in /etc/dnf/dnf.conf file	SERIOUS	3	100							*
+2.2.2	2.5	22690	0	Status of the 'avahi' package.	CRITICAL	4	100							*
+2.2.16.a	2.21	22691	0	Status of the 'nfs-utils' package.	SERIOUS	3	100							*
+2.2.17.a	2.23	22692	0	Status of the 'rpcbind' package installation.	MINIMAL	1	100							*
+2.2.3	2.6	22696	0	Ensure CUPS is not installed	SERIOUS	3	100							*
+5.5.1.a	5.54	22999	0	Status of the 'pam_pwquality' module in /etc/pam.d/system-auth file	SERIOUS	3	100							*
+5.5.1.b	5.55	23000	0	Status of the 'pam_pwquality' module in /etc/pam.d/password-auth file	SERIOUS	3	100							*
+1.3.2.b	1.33	23652	0	Status of the 'periodically scheduled (crontab)' aide check (/var/spool/cron/)	MEDIUM	2	0		Admin 	Update 	Setting not found	Directory not found OR matches regular expression list /usr/(bin|sbin)/aide(.wrapper)?\s+.*--(check|update)		*
+1.1.3.2	1.7	23731	0	Status of the 'nodev' option for '/var' partition using 'mount' command	SERIOUS	3	100							*
+1.1.3.3	1.8	23733	0	Status of the 'nosuid' option for '/var' partition using 'mount' command	SERIOUS	3	100							*
+1.1.5.2	1.12	23734	0	Status of the 'nodev' option for '/var/log' partition using 'mount' command	SERIOUS	3	100							*
+1.1.5.3	1.13	23735	0	Status of the 'noexec' option for '/var/log' partition using 'mount' command	SERIOUS	3	100							*
+1.1.5.4	1.14	23736	0	Status of the 'nosuid' option for '/var/log' partition using 'mount' command	SERIOUS	3	100							*
+1.1.6.2	1.15	23737	0	Status of the 'noexec' option for '/var/log/audit' partition using 'mount' command	SERIOUS	3	100							*
+1.1.6.3	1.16	23738	0	Status of the 'nodev' option for '/var/log/audit' partition using 'mount' command	SERIOUS	3	100							*
+1.1.6.4	1.17	23739	0	Status of the 'nosuid' option for '/var/log/audit' partition using 'mount' command	SERIOUS	3	100							*
+4.2.2.2	4.19	23747	0	Status of 'systemd-journald.service' service	CRITICAL	4	100							*
+2.2.8.b	2.12	23772	0	Status of 'nginx' package installed on the system	SERIOUS	3	100							*
+2.2.9.b	2.14	23773	0	Status of 'cyrus-imapd' package installed on the system	SERIOUS	3	100							*
+2.2.4	2.7	23774	0	Status of 'dhcp-server' package installed on the system	SERIOUS	3	100							*
+2.3.4	2.29	23775	0	Status of 'ftp' package installed on the system	SERIOUS	3	100							*
+4.2.2.1.4	4.18	23778	0	Status of 'systemd-journal-remote.socket' service	CRITICAL	4	100							*
+4.2.1.7.c	4.12	23814	0	Status of 'imtcp' module loaded in /etc/rsyslog.conf and the files included within /etc/rsyslog.conf  (new rsyslog configuration format)	SERIOUS	3	100							*
+4.2.1.7.d	4.13	23815	0	Status of 'input' parameter configured in /etc/rsyslog.conf and the files included within /etc/rsyslog.conf (new rsyslog configuration format)	SERIOUS	3	100							*
+3.1.2	3.2	23960	0	Status of the 'wireless interfaces' in the '/etc/modprobe.d/*.conf' file	CRITICAL	4	100							*
+2.2.18.a	2.25	24260	0	Status of the 'rsync-daemon' package installation	SERIOUS	3	100							*
+1.5.3.a	1.44	25195	0	Status of the network parameter 'kernel.randomize_va_space' in /usr/local/lib/sysctl.d/*.conf and /lib/sysctl.d/*.conf files	SERIOUS	3	100							*
+3.2.1.d	3.6	25201	0	Status of the network parameter 'net.ipv6.conf.all.forwarding' in /usr/local/lib/sysctl.d/*.conf and /lib/sysctl.d/*.conf files	SERIOUS	3	100							*
+2.2.14	2.19	25369	0	Status of the dnsmasq package on the system	SERIOUS	3	100							*
+3.4.1.2.f	3.79	25370	0	Status of the 'nftables' service using systemctl	CRITICAL	4	100							*
+1.8.3	1.72	25371	0	Status of 'disable-user-list' setting configured '/etc/dconf/db/*' files on the system	MEDIUM	2	100							*
+3.2.1.h	3.1	25394	0	Status of the 'net.ipv4.ip_forward' network parameter configured in /usr/local/lib/sysctl.d/*.conf and /lib/sysctl.d/*.conf files	SERIOUS	3	100							*
+1.3.3	1.34	25395	0	Status of audit tools (/sbin/au* and /sbin/audit*) integrity configuration in '/etc/aide.conf' and '/etc/aide.conf.d/*.conf' files on the system	SERIOUS	3	100							*
+1.6.1.2	1.49	25396	0	Status of the 'selinux' and 'enforcing' settings fetched with grubby command	SERIOUS	3	100							*
+														*
