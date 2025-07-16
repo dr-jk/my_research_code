@@ -1,10 +1,1 @@
-Working Red Hat Enterprise Linux 9.* Google Hardening Policy - 20250610	06/10/2025 at 08:43:06 (GMT-0500)																
-Prime Therapeutics	2900 Ames Crossing Road		Eagan	Minnesota	United States of America	55121											
-Kevin Lillie	prmet_kl3	Manager															
-SUMMARY																	
-Policy Id	Policy Title	Policy Locking	Policy Modified	Policy Last Evaluated	Asset Groups	IPs	Asset Tags	PC Agent IPs	Technologies	Controls	Assets	Control Instances	Passed	Failures	Error	Approved Exceptions	Pending Exceptions
-2689389	T_REHL  9.X v2.0 (Cloud) Google Compute Engine CIS	Unlocked	06/05/2025 at 08:38:29 (GMT-0500)	06/10/2025 at 05:04:51 (GMT-0500)		10.137.40.34		No	Red Hat Enterprise Linux 9.x	508	1	508	427(84.06%)	81(15.94%)	0	0	0
-Control Statistics (Percentage of Hosts Passed per Control)																	
-ASSET TAGS																	
-10.137.40.34	Cloud Agent	Linux	Linux Server Cloud Agent	AG - VWAQAL001P	LG - GCP US Central	tagset_33762530	tagset_33762530	Hardening Rhel Server 9.X  (Cloud) Google Compute Engine	AG - VWAQAL001P	LG - GCP US Central	Hardening Rhel Server 9.X						
-RESULTS																	
+
